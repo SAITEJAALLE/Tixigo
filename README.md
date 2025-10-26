@@ -9,7 +9,8 @@
 
 # Tixigo — discover events, book tickets, scan on entry
 
-Hi, I’m Saiteja. I built **Tixigo** to make small-event ticketing feel “enterprise-grade” without the busywork. 
+Hi, I’m Saiteja. Still there are lot of applications which are similar to our application are existed in our real-world, This is my own idea built **Tixigo** to make small-event ticketing feel “enterprise-grade” without the busywork. My main motive as a graduate who finished my Masters in Computer Science is,i want to show my recruiters and fellow members about my entreprenuership skills(i believed my idea which came from day to day problems and planned how to  work on this project to make it more effectively), strong foundation in my Full-stack(PERN STACK) Development with strong background , problem-solving and innovative skills(which i planned right from the beginning to end, solved each and every problem by completely dedicating my time, efforts on this and able to finish it wonderfully and successfully).
+
 The pitch is simple: organisers create events with showtimes and ticket types, customers buy tickets, and 
 staff scan people in at the door. There’s an **Owner** role that sees revenue and approves new organisers.
 
