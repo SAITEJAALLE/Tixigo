@@ -16,14 +16,14 @@ function bool(v) {
  *   MAIL_PORT=465
  *   MAIL_SECURE=true
  *   MAIL_USER=your@gmail.com
- *   MAIL_PASS=your-app-password     <-- app password, no spaces
+ *   MAIL_PASS=passwod
  *   MAIL_FROM="Trixigo <no-reply@tixigo.local>"
  */
 const provider = (process.env.MAIL_PROVIDER || 'gmail').toLowerCase();
 
 const user = process.env.MAIL_USER || '';
 let pass = process.env.MAIL_PASS || '';
-// Gmail app passwords sometimes get pasted with spaces; strip them:
+// Gmail app passwords sometimes get pasted with spaces;:
 pass = pass.replace(/\s+/g, '');
 
 const host =
@@ -51,7 +51,7 @@ export async function sendMail({ to, subject, html, text }) {
     const info = await transporter.sendMail({ from, to, subject, html, text });
     return { ok: true, messageId: info.messageId };
   } catch (err) {
-    // keep logging concise but helpful
+    // keep logging 
     console.error('sendMail error:', err?.response || err?.message || err);
     return { ok: false, error: err?.message || 'mailer_error' };
   }
