@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme & subtle background  */
+:root { color-scheme: light dark; }
+
+body {
+  /* neutral, professional base */
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  /* very light neutral vignette (not colorful) */
+  background-image:
+    radial-gradient(900px 500px at 80% -120px, rgba(15, 23, 42, .04), transparent 60%),
+    radial-gradient(1100px 600px at -20% -240px, rgba(15, 23, 42, .03), transparent 60%);
+}
+
+/*  Surfaces  */
+.card        { @apply rounded-2xl border border-slate-200/70 dark:border-slate-800/60 bg-white dark:bg-slate-900 shadow-sm; }
+.kpi         { @apply card p-3; }
+.glass       { @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur border border-white/20; }
+
+/* Buttons  */
+.btn         { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500/30 dark:focus:ring-blue-400/30 disabled:opacity-50 disabled:cursor-not-allowed; }
+
+.btn-primary { @apply btn text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800; }
+.btn-secondary { @apply btn bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800; }
+.btn-ghost   { @apply btn bg-transparent text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800; }
+.btn-danger  { @apply btn bg-rose-600 text-white hover:bg-rose-700; }
+
+/*  a restrained gradient button (kept for backwards compatibility) */
+.btn-neo {
+  @apply rounded-xl px-4 py-2 text-sm font-medium text-white shadow-sm transition;
+  background-image: linear-gradient(90deg, #1d4ed8, #3b82f6); /* blue600 → blue500 */
+}
+.btn-neo:hover { filter: brightness(1.04); }
+
+/*Inputs */
+.input       { @apply w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30; }
+.select      { @apply input pr-8; }
+.textarea    { @apply input min-h-[100px]; }
+
+/*  UI bits  */
+.badge       { @apply inline-flex items-center rounded-full px-3 py-1 text-xs bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200; }
+.table       { @apply w-full text-sm; }
+.table th    { @apply text-left p-2 text-slate-500 dark:text-slate-400; }
+.table td    { @apply p-2; }
+.skeleton    { @apply animate-pulse rounded-xl bg-slate-200 dark:bg-slate-800 h-4; }
+.tabs        { @apply inline-flex items-center gap-2 rounded-xl bg-slate-200/60 dark:bg-slate-800/50 p-1; }
+.tab         { @apply px-3 py-1 rounded-lg; }
+.tab-active  { @apply bg-white dark:bg-slate-900 shadow-sm; }
+.link        { @apply underline decoration-from-font decoration-slate-400 hover:decoration-slate-600; }
+.container   { @apply max-w-6xl mx-auto; }
+
+/* Branding text (subtle, not rainbow)*/
+/* If you use <span class="gradient-text">Tixigo</span> or "Book" */
+.gradient-text { @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-blue-500; }
