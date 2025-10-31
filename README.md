@@ -50,7 +50,7 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 - Manage Profile
   
 <p align="center">
-  <img src="docs/T_customerProfile.png" alt="Customer Profile" width="900"/>
+  <img src="docs/T_customerProfie.png" alt="Customer Profile" width="900"/>
   <br/>
   <br/>
   <b>User Profile</b>
@@ -91,19 +91,51 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 
 ### For organisers
 - Submit a **“Become an organiser”** request.
+  
+ <p align="center">
+  <img src="docs/T_organiserRequest.png" alt="Request to be an Organiser" width="900"/>
+  <br/>
+  <br/>
+  <b>Become an Organiser?</b>
+</p>
+
 - Once approved, create events with:
   - Multiple **showtimes** (date/time + capacity).
   - Multiple **ticket types** (name, price, currency, perks).
   - Photo gallery and description.
+ 
+<p align="center">
+  <img src="docs/T_createEvent.png" alt="Create Events" width="900"/>
+  <br/>
+  <br/>
+  <b>Creating an Event Page</b>
+</p>
+
 - Invite and approve staff for scanning.
 - View per‑event **insights**: capacity, sold, left, checked‑in, refunded, breakdown per showtime.
 
+<p align="center">
+  <img src="docs/T_organiserDashboard.png" alt="Organiser Dashboard" width="900"/>
+  <br/>
+  <br/>
+  <b>Organiser Dashboard with live stats for every Event</b>
+</p>
+
 ### For owner
 - **Admin dashboard**: KPIs (revenue, events, tickets).
+
+<p align="center">
+  <img src="docs/T_adminDashboard.png" alt="admin dashboard" width="900"/>
+  <br/>
+  <br/>
+  <b>ADMIN DASHBOARD</b>
+</p>  
+
 - View **pending organiser requests**; approve/reject.
 - Segment events: upcoming / today / past.
 - Soft-cancel events (auto-issue refunds per ticket).
 - Access to every event organiser Dashboards
+
 
 ---
 
@@ -173,6 +205,13 @@ Organiser / Owner
 - `GET   /api/events/:id/insights` — capacity/sold/left/admitted/refunded (+ per showtime)
 - `GET   /api/events/:id/tickets` — full ticket list for the event
 
+<p align="center">
+  <img src="docs/T_Owner.png" alt="Owner" width="900"/>
+  <br/>
+  <br/>
+  <b>ADMIN</b>
+</p>
+
 Becoming an organiser
 - `POST  /api/organizers/requests` — create/ensure my request
 - `GET   /api/organizers/requests/mine` — my request status
@@ -237,9 +276,23 @@ You’ll now see **Owner Admin** and can approve organiser requests.
 UI shows: `admitted ? "Yes" : "—"`. Server returns each ticket with `admitted` (boolean) and `showTime.dateTime`. 
 If you prefer a timestamp, add `checkedInAt` to the schema and set it at scan time.
 
+<p align="center">
+  <img src="docs/T_ticketsSold.png" alt="Tickets Sold" width="900"/>
+  <br/>
+  <br/>
+  <b>Both Organiser and Admin can see about the status of Tickets</b>
+</p>
+
 ### Event creation date inputs
 API accepts ISO datetimes and a UK-friendly `dd-mm-yyyy hh:mm` fallback. 
 All are normalised server‑side in one place (`parseMaybeDMY`).
+
+<p align="center">
+  <img src="docs/T_Calender.png" alt="Calender" width="900"/>
+  <br/>
+  <br/>
+  <b>Calender</b>
+</p>
 
 ### Email “from” identity
 Configure in `server/.env`:
@@ -258,8 +311,23 @@ first‑class paths, so no more “No routes matched” surprises.
 ## Stripe flow (MVP)
 - On checkout, we create a Payment Intent and confirm on the client.
 - On success, we create an `Order` and its `Ticket` rows.
+
+<p align="center">
+  <img src="docs/T_checkoutPage" alt="Checkout Page" width="900"/>
+  <br/>
+  <br/>
+  <b>Checkout Page</b>
+</p>
+  
 - Owner cancellation triggers a refund per ticket (best‑effort). 
 - All refunds are also recorded in `RefundRequest` for auditability.
+
+<p align="center">
+  <img src="docs/T_Payment.png" alt="Payment" width="900"/>
+  <br/>
+  <br/>
+  <b>Payment</b>
+</p>
 
 ---
 
@@ -303,7 +371,7 @@ server/
 ## Operational playbook
 
 ### Seeding an organiser
-- User registers → Owner sets role to ORGANIZER (or approves their request) → organiser can create events.
+- User registers → Owner sets role to ORGANIZER ( approves their request) → organiser can create events.
 
 ### Restoring an event
 - `POST /api/events/:id/toggle { isActive: true }` flips a cancelled event back on. No data loss; tickets stay linked.
