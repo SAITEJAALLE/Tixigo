@@ -82,8 +82,8 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 - Initiate refunds if necessary
 
   <p align="center">
-  <img src="docs/T_Staff.png" alt="Staff" />
-  <img src="docs/T_staffScan.png" alt="Staff Scan" />
+  <img src="docs/T_Staff.png" alt="Staff" height="200" width="300" />
+  <img src="docs/T_staffScan.png" alt="Staff Scan" height="200" width="300"/>
   <br/>
   <br/>
   <b>Staff Scanning Page</b>
