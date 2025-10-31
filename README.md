@@ -18,8 +18,9 @@ This README is written as if I’m handing the project to a teammate. It covers 
 design decisions, and trade‑offs. If you’re a recruiter: this shows how I structure and ship production-facing code.
 
 <p align="center">
-  <img src="docs/T_Homepage.png" alt="Homepage" width="900">
-  <br>
+  <img src="docs/T_Homepage.png" alt="Homepage" width="900"/>
+  <br/>
+  <br/>
   <b>HOME PAGE</b>
 </p>
 
