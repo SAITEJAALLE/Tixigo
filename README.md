@@ -26,7 +26,7 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 
 ---
 <p align="center">
-  <img src="docs/T_Register.png" alt="Homepage" width="900"/>
+  <img src="docs/T_Register.png" alt="Register" width="900"/>
   <br/>
   <br/>
   <b>Register using Mail </b>
@@ -40,16 +40,39 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 ### For customers
 - Create Account and verify the link through mail to create account.
   <p align="center">
-  <img src="docs/T_Login.png" alt="Homepage" width="900"/>
+  <img src="docs/T_Login.png" alt="Login" width="900"/>
   <br/>
   <br/>
   <b>Login</b>
 </p>
+
 - Login and reset password flows.
 - Manage Profile
+  
+<p align="center">
+  <img src="docs/T_customerProfile.png" alt="Customer Profile" width="900"/>
+  <br/>
+  <br/>
+  <b>User Profile</b>
+</p>
+
 - Browse and search public events(filter options is added).
+<p align="center">
+  <img src="docs/T_Explore.png" alt="Explore" width="900"/>
+  <br/>
+  <br/>
+  <b>Explore Events using Type,Name,Location and Date</b>
+</p>
+  
 - Buy tickets; each ticket gets a unique code + QR image.
 - See **My Tickets** and present the QR at entry.
+
+  <p align="center">
+  <img src="docs/T_ticketsPage.png" alt="My tickets" width="900"/>
+  <br/>
+  <br/>
+  <b>My Tickets</b>
+</p>
 
   ### For Staff
 - Open account, request the oragniser using link to be a Staff.
@@ -57,6 +80,14 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 - Open the **Staff tools page** to scan the tickets
 
 - Initiate refunds if necessary
+
+  <p align="center">
+  <img src="docs/T_Staff.png" alt="Staff" />
+  <img src="docs/T_staffScan.png" alt="Staff Scan" />
+  <br/>
+  <br/>
+  <b>Staff Scanning Page</b>
+</p>
 
 ### For organisers
 - Submit a **“Become an organiser”** request.
