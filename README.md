@@ -25,7 +25,7 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 
 ### For customers
 
--Create Account and verify the link through mail to create account.
+- Create Account and verify the link through mail to create account.
 - Login and reset password flows.
 - Manage Profile
 - Browse and search public events(filter options is added).
@@ -34,11 +34,11 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 
 
 ### For Staff
--Open account, request the oragniser using link to be a Staff.
+- Open account, request the oragniser using link to be a Staff.
 
--Open the **Staff tools page** to scan the tickets
+- Open the **Staff tools page** to scan the tickets
 
--Initiate refunds if necessary
+- Initiate refunds if necessary
 
 
 ### For organisers
