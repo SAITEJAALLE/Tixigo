@@ -24,6 +24,14 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
   <b>HOME PAGE</b>
 </p>
 
+---
+<p align="center">
+  <img src="docs/T_Register.png" alt="Homepage" width="900"/>
+  <br/>
+  <br/>
+  <b>Register using Mail </b>
+</p>
+
 
 ---
 
@@ -31,6 +39,12 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 
 ### For customers
 - Create Account and verify the link through mail to create account.
+  <p align="center">
+  <img src="docs/T_Login.png" alt="Homepage" width="900"/>
+  <br/>
+  <br/>
+  <b>Login</b>
+</p>
 - Login and reset password flows.
 - Manage Profile
 - Browse and search public events(filter options is added).
