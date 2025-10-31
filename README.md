@@ -260,7 +260,7 @@ server/
 - Background jobs (BullMQ) for mail/retry/refund workflows.
 - A small Cypress smoke suite + Vitest unit tests.
 
----
+
 
 ## Why Tixigo
 
