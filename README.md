@@ -50,7 +50,7 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 - Manage Profile
   
 <p align="center">
-  <img src="docs/T_customerProfie.png" alt="Customer Profile" width="900"/>
+  <img src="docs/T_customerProfile.png" alt="Customer Profile" width="900"/>
   <br/>
   <br/>
   <b>User Profile</b>
