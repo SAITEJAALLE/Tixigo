@@ -313,7 +313,7 @@ first‑class paths, so no more “No routes matched” surprises.
 - On success, we create an `Order` and its `Ticket` rows.
 
 <p align="center">
-  <img src="docs/T_checkoutPage" alt="Checkout Page" width="900"/>
+  <img src="docs/T_checkoutPage.png" alt="Checkout Page" width="900"/>
   <br/>
   <br/>
   <b>Checkout Page</b>
