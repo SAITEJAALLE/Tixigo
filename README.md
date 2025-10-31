@@ -24,10 +24,22 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 ## Key capabilities
 
 ### For customers
-- Browse and search public events.
+
+-Create Account and verify the link through mail to create account.
+- Login and reset password flows.
+- Manage Profile
+- Browse and search public events(filter options is added).
 - Buy tickets; each ticket gets a unique code + QR image.
 - See **My Tickets** and present the QR at entry.
-- Verify email and reset password flows.
+
+
+### For Staff
+-Open account, request the oragniser using link to be a Staff.
+
+-Open the **Staff tools page** to scan the tickets
+
+-Initiate refunds if necessary
+
 
 ### For organisers
 - Submit a **“Become an organiser”** request.
@@ -43,6 +55,7 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 - View **pending organiser requests**; approve/reject.
 - Segment events: upcoming / today / past.
 - Soft-cancel events (auto-issue refunds per ticket).
+- Access to every event organiser Dashboards
 
 
 
