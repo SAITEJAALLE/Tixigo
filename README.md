@@ -19,15 +19,6 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 
 ## DEMO VIDEO URL: https://github.com/SAITEJAALLE/Tixigo/releases/download/v1.0.0/Video.mov
 
-## DEMO VIDEO LINK:
-<video
-  src="https://github.com/SAITEJAALLE/Tixigo/releases/download/v1.0.0/Video.mov"
-  width="720"
-  controls
-  muted
-  playsinline
-  preload="metadata">
-</video>
 
 
 ## Key capabilities
