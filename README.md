@@ -17,7 +17,7 @@ staff scan people in at the door. There’s an **Owner** role that sees revenue 
 This README is written as if I’m handing the project to a teammate. It covers how the app works, how to run it, 
 design decisions, and trade‑offs. If you’re a recruiter: this shows how I structure and ship production-facing code.
 
----
+
 
 ## Key capabilities
 
@@ -42,18 +42,18 @@ design decisions, and trade‑offs. If you’re a recruiter: this shows how I st
 - Segment events: upcoming / today / past.
 - Soft-cancel events (auto-issue refunds per ticket).
 
----
+
 
 ## System design (one‑pager)
 
-```
+
 Client (React + Tailwind)
   ↕ JSON over HTTPS
 Server (Node/Express)
   ↔ Prisma ORM
 PostgreSQL
 Stripe (payments) | SMTP (email)
-```
+
 
 - **Auth:** JWT in `Authorization: Bearer <token>`; email verification required.
 - **Authorisation:** `requireRole([...])` guards routes. Server is the authority; UI also hides forbidden actions.
@@ -61,7 +61,7 @@ Stripe (payments) | SMTP (email)
 - **Idempotency:** create routes keep side‑effects minimal; organiser request creation is upsert-like.
 - **Cancellations:** owner cancels an event → per-ticket refund + mail (best‑effort) + soft flags in DB.
 
----
+
 
 ## Data model (short tour)
 
@@ -78,7 +78,7 @@ Stripe (payments) | SMTP (email)
 - **RefundRequest** — audit trail for refunds.
 
 ### ERD (ASCII)
-```
+
 User (role) 1---* Event
 User 1---1 OrganizerRequest
 Event 1---* ShowTime
@@ -88,9 +88,9 @@ Event 1---* Ticket
 ShowTime 1---* Ticket
 TicketType 1---* Ticket
 User 1---* StaffAssignment *---1 Event
-```
 
----
+
+
 
 ## API overview (selected)
 
@@ -123,7 +123,6 @@ Owner: KPIs & events
 - `GET   /api/admin/kpis`
 - `GET   /api/admin/events/segments?segment=upcoming|today|past`
 
----
 
 ## Running locally
 
@@ -146,7 +145,7 @@ cp .env.example .env
 npm i
 npx prisma migrate dev
 npm run dev
-```
+
 
 ### 2) Frontend
 
@@ -155,18 +154,18 @@ cd client
 cp .env.example .env       # VITE_API_BASE defaults to http://localhost:4000/api
 npm i
 npm run dev
-```
+
 
 ### 3) Make yourself the OWNER (local)
 Register, then in Postgres:
 
 ```sql
 update "User" set role='OWNER' where email='you@example.com';
-```
+
 
 You’ll now see **Owner Admin** and can approve organiser requests.
 
----
+
 
 ## Developer notes
 
@@ -180,17 +179,17 @@ All are normalised server‑side in one place (`parseMaybeDMY`).
 
 ### Email “from” identity
 Configure in `server/.env`:
-```
+
 MAIL_FROM_NAME="Tixigo"
 MAIL_FROM_EMAIL=no-reply@yourdomain.com
-```
+
 This ensures recruiters won’t see a personal address as the sender.
 
 ### Error boundaries (client)
 React Router is configured with dedicated routes; deep links like `/owner`, `/organizer` and `/become-organiser` are 
 first‑class paths, so no more “No routes matched” surprises.
 
----
+
 
 ## Stripe flow (MVP)
 - On checkout, we create a Payment Intent and confirm on the client.
@@ -198,7 +197,7 @@ first‑class paths, so no more “No routes matched” surprises.
 - Owner cancellation triggers a refund per ticket (best‑effort). 
 - All refunds are also recorded in `RefundRequest` for auditability.
 
----
+
 
 ## Security & privacy
 - Hashed passwords (bcrypt), JWTs with sensible expiry, HTTPS in prod.
@@ -207,18 +206,18 @@ first‑class paths, so no more “No routes matched” surprises.
 - Invite tokens, reset tokens, and verification tokens are single‑use with expiry.
 - PII: only what we need (name, email, optional phone/address).
 
----
 
 ## Accessibility & UX
 - Colour palette tuned for contrast; focus states on buttons/inputs.
 - Touch targets ≥44px where sensible.
 - Reduced motion respected; no blocking animations in critical flows.
 
----
+
 
 ## Project structure
 
-```
+
+
 client/
   src/
     assets/         # tixigo-lockup.svg, favicon.svg
@@ -233,9 +232,9 @@ server/
     routes/         # auth, events, organizers, admin, staff, orders
     middleware/     # requireAuth, requireRole
     utils/          # mailer.js, stripe.js
-```
 
----
+
+
 
 ## Operational playbook
 
@@ -251,7 +250,7 @@ server/
 - “No pending organiser profiles” while status shows `pending`: ensure Admin screen calls
   `/api/admin/organizers/pending` (pending comes from `OrganizerRequest`, not `OrganizerProfile`).
 
----
+
 
 ## What I’d build next
 - WebSocket live dashboards during scanning; optimistic updates on admit.
