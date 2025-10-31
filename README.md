@@ -17,6 +17,17 @@ staff scan people in at the door. There’s an **Owner** role that sees revenue 
 This README is written as if I’m handing the project to a teammate. It covers how the app works, how to run it, 
 design decisions, and trade‑offs. If you’re a recruiter: this shows how I structure and ship production-facing code.
 
+## DEMO VIDEO URL: https://github.com/SAITEJAALLE/Tixigo/releases/download/v1.0.0/Video.mov
+
+## DEMO VIDEO LINK:
+<video
+  src="https://github.com/SAITEJAALLE/Tixigo/releases/download/v1.0.0/Video.mov"
+  width="720"
+  controls
+  muted
+  playsinline
+  preload="metadata">
+</video>
 
 
 ## Key capabilities
